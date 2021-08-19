@@ -17,6 +17,24 @@
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   <!-- Core theme CSS (includes Bootstrap)-->
   <link href="CSS/style.css" rel="stylesheet" />
+  <style>
+    #imgControl {
+      margin: 0;
+      max-width: 400px;
+      max-height: 200px;
+    }
+    #imgControl #imgUpload{
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      overflow: hidden;
+    }
+    @media (max-width: 768px) {
+      #imgControl #imgUpload{
+      /* max-height: 400px; */
+    }
+    }
+  </style>
 </head>
 
 <body style="height: 100vh;width: 100%;">
@@ -32,9 +50,9 @@
             <form method="POST" enctype="multipart/form-data" id="form_post">
               <div class="mb-4">
                 <label for="exampleInputTitle" class="form-label">Title :</label>
-                <?php if(isset($_SESSION['id_user'])) :?>
+                <?php if (isset($_SESSION['id_user'])): ?>
                   <input type="hidden" name="id_user" value="<?=$_SESSION['id_user']?>">
-                <?php endif ;?>
+                <?php endif;?>
                 <input type="text" name="title" class="form-control" id="exampleInputTitle" required>
               </div>
               <div class="mb-4">
@@ -42,14 +60,23 @@
                 <textarea name="content" id="exampleInputContent" cols="30" rows="12" class="form-control" required></textarea>
               </div>
               <label for="exampleInputFile" class="form-label">Upload Image :</label>
-              <div class="input-group mb-4">
-                <input type="file" name="image" class="form-control" id="exampleInputFile">
+              <div class="input-group mb-2">
+                <input type="file" name="image" class="form-control" id="exampleInputFile" onchange="readURL(this)">
                 <label class="input-group-text d-none d-sm-block" for="exampleInputFile">Image</label>
               </div>
-              <span class="float-end mt-2 mb-3">
+              <div class="row mb-4 mb-md-3">
+                <div class="col-12 text-center d-flex justify-content-center">
+                  <div id="imgControl" class="d-none">
+                    <img id="imgUpload" class="img-fluid my-3 img-thumbnail shadow-sm">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <span class="float-end mt-2 mb-3">
                 <a href="#!" onclick="goBack()" class="text-danger me-3">Cancel</a>
                 <button type="submit" class="btn btn-success px-4">Create</button>
               </span>
+              </div>
             </form>
           </div>
         </div>
