@@ -37,9 +37,9 @@
   </style>
 </head>
 
-<body style="height: 100vh;width: 100%;">
+<body style="height: 100vh;">
   <?php include 'components/navbar.php';?>
-  <div class="container h-100">
+  <div class="container mb-3 h-100 mt-1 mt-md-0">
     <div class="row justify-content-center h-100 align-items-center ">
       <div class="col-12 col-md-11 col-lg-10 col-xl-9 p-0">
         <div class="card mb-5">
@@ -83,7 +83,9 @@
       </div>
     </div>
   </div>
-
+  <div class="container-fluid p-0 d-none d-lg-block">
+    <?php include 'components/footer.php'; ?>
+  </div>
   <!-- Bootstrap core JS-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- jQuery -->

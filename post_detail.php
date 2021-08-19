@@ -57,9 +57,15 @@ figure img {
   <?php include 'components/navbar.php';?>
 
   <!-- Page content-->
-  <div class="container mt-5">
+  <div class="container mt-3">
     <div class="row justify-content-center">
       <div class="col-lg-10 col-xl-9" id="post_detail">
+        <nav class="mt-3" style="--bs-breadcrumb-divider: '>>';" aria-label="breadcrumb">
+  <ol class="breadcrumb mb-1">
+    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Post</li>
+  </ol>
+</nav>
         <!-- Post content-->
         <article>
           <header class="mb-4">

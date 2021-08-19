@@ -52,11 +52,9 @@ if (!isset($_SESSION['login']) && $_SESSION['login'] !== 'login') {
   /* number of lines to show */
   -webkit-box-orient: vertical;
 }
-.icon,
 .icon>i {
   transition: all 0.2s ease-in-out;
 }
-.icon:hover,
 .icon:active,
 .icon:hover>i {
   color: red!important;
